@@ -1,0 +1,123 @@
+.dashboarduserbtn {
+    background-color: #3b778f;
+    color: white;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.searchbox {
+    width: 550px;
+    padding: 7px;
+    text-align: center;
+    border: 2px solid darkslategray;
+    border-radius: 7px;
+}
+
+.searchouter {
+    text-align: center;
+}
+
+.searchbox:hover {
+    box-shadow: 0px 0px 7px rgb(66, 66, 70);
+}
+
+.pageNumInfo {
+    margin-left: 50px;
+    margin-top: 20px;
+    color: white;
+    text-decoration: underline;
+}
+
+.post {
+    margin: 25px 50px;
+    padding: 15px;
+    border: 1px solid black;
+    width: 25%;
+    border-radius: 10px;
+    background-color: #f7ede2;
+}
+
+.outerpost {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.viewPost {
+    padding: 50px;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    /* box-shadow: 6px 6px 3px darkslategray; */
+    box-shadow: 0 4px 12px 0 rgba(7, 7, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: #f7ede2;
+}
+
+.dashboardbtn {
+    background-color: #f4a261;
+}
+
+.userWelcome {
+    margin-left: 50px;
+    margin-top: 45px;
+    color: white;
+}
+
+.deletebtn {
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #fe6d73;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.fullpost {
+    margin-top: 5px;
+    background-color: #f6bd60;
+    opacity: 0;
+    /* transform: translateY(50%); */
+    transition: all 0.5s ease;
+}
+
+.post:hover .fullpost {
+    opacity: 1;
+}
+
+.post:hover .deletebtn {
+    opacity: 1;
+}
+
+.post:hover {
+    box-shadow: 0px 0px 10px rgb(66, 66, 70);
+}
+
+.yourpoststext {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+}
+
+.pagebuttons {
+    margin-top: 20px;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagedirection {
+    width: 90px;
+    margin: 0px 7px;
+}
+
+.pagenumber {
+    padding: 5px 10px;
+    margin: 0px 2px;
+}
+
+.pgbtns {
+    border-radius: 4px;
+    background-color: #3b778f;
+    color: white;
+}

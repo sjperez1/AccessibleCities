@@ -1,0 +1,35 @@
+.homeformbox {
+    width: 300px;
+    margin: auto;
+    background-color: #eaf4f4;
+    padding: 20px 15px;
+    border-radius: 5%;
+}
+
+.formlabel {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.formbutton {
+    margin-top: 10px;
+}
+
+.formtext {
+    font-size: small;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.loginregbuttondiv {
+    text-align: center;
+}
+
+.loginregbutton {
+    background-color: #3b778f;
+    color: white;
+}
+
+.formlabel {
+    color: white;
+}

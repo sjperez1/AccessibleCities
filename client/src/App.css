@@ -1,0 +1,9 @@
+.navbar {
+  background-color: #264653;
+}
+
+.navbar-brand {
+  color:white;
+  padding-left: 40px;
+  padding-right: 50px;
+}

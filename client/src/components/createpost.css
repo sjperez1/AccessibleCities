@@ -1,0 +1,21 @@
+.outercreateform {
+    padding: 50px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    background-color: #f7ede2;
+    box-shadow: 0 4px 12px 0 rgba(7, 7, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-check-label {
+    margin: 10px 0px;
+}
+
+.btn-secondary {
+    margin-left: 10px;
+}
+
+.alert-danger {
+    margin-top: 10px;
+}
