@@ -32,6 +32,10 @@ const PostSchema = new Schema({
         required : [true, "You must include a written post"],
         minlength : [20, "Posts must be at least 20 characters"]
     },
+    // imgName : {
+    //     type : String,
+    //     required : [true, "You must include an image"]
+    // },
     user : {
         type : Schema.Types.ObjectId,
         ref : 'User'

@@ -10,7 +10,7 @@ const UserPosts = () => {
     const [numOfPages, setNumOfPages] = useState(0)
     const [search, setSearch] = useState("")
     const searchBy =["location", "features", "preview", "postBody"]
-    // the following creates a new array with a certain number of things, specified in parentheses. These things will show up as empty, which can be seen if you console.log(new Array(4). The .fill() will actually give this number of empty things a value. The map function helps go through each of the values and put the index number in the array, so the number of pages array will start at zero and go up to numbeer of pages - 1.
+    // the following creates a new array with a certain number of things, specified in parentheses. These things will show up as empty, which can be seen if you console.log(new Array(4). The .fill() will actually give this number of empty things a value. The map function helps go through each of the values and put the index number in the array, so the number of pages array will start at zero and go up to number of pages - 1.
     const pages = new Array(numOfPages).fill(null).map((num, i) => i)
     const navigate = useNavigate()
     console.log("number of pages" + numOfPages)

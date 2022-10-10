@@ -5,9 +5,23 @@ const app = express()
 const jwt = require("jsonwebtoken")
 const cookieParser = require('cookie-parser');
 
+//aws-sdk s3client is a library used to interact with s3 bucket
+const {S3Client, PutObjectCommand} = require("@aws-sdk/client-s3");
+
 // this requires the dotenv library and call its config function
 require('dotenv').config()
-const api = 
+
+const bucketName = process.env.BUCKET_NAME
+const bucketRegion = process.env.BUCKET_REGION
+const bucketAccessKey = process.env.BUCKET_ACCESS_KEY
+const secretBucketAccessKey = process.env.SECRET_BUCKET_ACCESS_KEY
+const s3Bucket = new S3Client({
+    credentials: {
+        bucketAccessKey: bucketAccessKey,
+        secretBucketAccessKey: secretBucketAccessKey
+    },
+    region: bucketRegion
+})
 
 // mongoose config
 require('./configs/mongoose.config')

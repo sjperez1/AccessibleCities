@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from "axios"
 import {useNavigate} from 'react-router-dom'
 import moment from 'moment'
+// import sha1 from 'crypto-js/sha1';
 import PlacesAutocomplete from '../components/Autocomplete'
 import '../components/createpost.css'
 
@@ -10,9 +11,13 @@ const CreatePostForm = (props) => {
     const [features, setFeatures] = useState("")
     const [preview, setPreview] = useState("")
     const [postBody, setPostBody] = useState("")
+    const [picture, setPicture] = useState()
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()
 
+    // const randName = () => crypto.randomBytes(32).toString('hex')
+    // const imgName = randName()
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         createAxios()
@@ -32,6 +37,13 @@ const CreatePostForm = (props) => {
                 setErrors(errMsgArr)
                 console.log(err) // .catch is unsuccessful
             })
+        createPicAxios()
+    }
+
+    const createPicAxios = () => {
+        const pictureData = new FormData()
+        pictureData.append("picture", picture)
+        axios.post(`http://localhost:8000/api/picture`, pictureData, {headers: {'Content-Type': 'multipart/form-data'}}, {withCredentials: true})
     }
 
     const handleDashboard = () => {
@@ -57,6 +69,9 @@ const CreatePostForm = (props) => {
                 <div>
                     <label className='form-check-label'>Type your accessibility post:</label>
                     <textarea name="postBody" value={postBody} onChange={e => setPostBody(e.target.value)} rows="13" className='form-control'/>
+                </div>
+                <div>
+                    <input type="file" onChange={e => setPicture(e.target.files[0])} className='filename' accept='image/*'></input>
                 </div>
                 <button type='submit' className='btn btn-success formbutton'>Create Post</button>
                 <button type='button' onClick={handleDashboard} className='btn btn-secondary formbutton'>Return to Dashboard</button>

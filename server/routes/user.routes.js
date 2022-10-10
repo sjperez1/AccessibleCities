@@ -1,6 +1,10 @@
 const UserController = require("../controllers/user.controller")
 const PostController = require("../controllers/post.controller")
 const {authenticate} = require("../configs/jwt.config")
+const multer = require("multer")
+const storage = multer.memoryStorage()
+const upload = multer({storage: storage})
+
 
 module.exports = (app) => {
     // user routes
@@ -14,4 +18,6 @@ module.exports = (app) => {
     app.get("/api/post/:id", PostController.onePost)
     app.delete("/api/post/:id", PostController.deletePost)
     app.post("/api/post", PostController.addPost)
+    // picture routes
+    app.post("/api/picture", upload.single('picture'), PostController.addPicture) // upload.single() is the middleware function to upload a single image. The string value has to match the string used when appending the data to pictureData in CreatePostForm.jsx
 }
